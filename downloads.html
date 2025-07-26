@@ -1,0 +1,207 @@
+<!-- downloads.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Download FRP Tools - FRP Unlocked</title><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    header {
+      background-color: #0b84f3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #eaf3fc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0b84f3;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .tool {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .tool h3 {
+      margin-top: 0;
+    }
+
+    .tool p {
+      margin: 10px 0;
+    }
+
+    .tool a {
+      display: inline-block;
+      padding: 10px 16px;
+      background-color: #0b84f3;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background-color: #f0f0f0;
+      font-size: 14px;
+    }
+  nav {
+    background-color: #0b84f3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+  }
+
+  nav .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    nav .menu {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+
+    nav .menu.show {
+      display: flex;
+      background-color: #0b84f3;
+      padding: 10px 0;
+    }
+
+    nav .hamburger {
+      display: block;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FRP Unlocked</h1>
+    <p>Download FRP Bypass Tools (APKs)</p>
+  </header>
+<nav>
+  <div class="logo">FRP Unlocked</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="menu" id="navMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="recovery_tools_page.html"><i class="fas fa-book"></i>Recovery Tools</a>
+    <a href="frp_tools_launcher.html"><i class="fas fa-download"></i> APK Tools</a>
+    <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="disclaimer.html"><i class="fas fa-shield-alt"></i> Disclaimer</a>
+  </div>
+</nav>
+
+  <div class="container">
+    <h2>Available FRP APK Tools</h2>
+
+    <div class="tool">
+      <h3>FRP Bypass APK</h3>
+      <p>Bypass Google account verification on older Android devices. Works on Android 5 to 8.</p>
+      <a href="#" download>Download</a>
+    </div>
+
+    <div class="tool">
+      <h3>QuickShortcutMaker</h3>
+      <p>Launch hidden apps or settings directly — often used to open Google Settings or Accounts screen.</p>
+      <a href="#" download>Download</a>
+    </div>
+
+    <div class="tool">
+      <h3>Google Account Manager (GAM)</h3>
+      <p>Choose a version based on your Android version (5.1, 6.0, 7.0, 8.0, etc.)</p>
+      <a href="#" download>Download GAM 6.0</a>
+      <a href="#" download>Download GAM 8.0</a>
+    </div>
+
+    <div class="tool">
+      <h3>Open Settings APK</h3>
+      <p>Opens Android Settings directly when you can’t access the normal menu.</p>
+      <a href="#" download>Download</a>
+    </div>
+
+    <div class="tool">
+      <h3>Samsung FRP Tool (PC)</h3>
+      <p>For Samsung devices that require PC software to complete FRP unlock.</p>
+      <a href="#" download>Download (ZIP)</a>
+    </div>
+
+  </div>
+
+<!-- Add this script at the end of your body -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('show');
+  }
+</script>
+
+  <footer>
+    &copy; 2025 FRP Unlocked | Tools are for educational and personal use only.
+ <br>
+    <br>
+    Made by Mr.Talha
+   </footer>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FRP Tools Launcher | FRP Unlocked</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #eef3f9;
+      color: #222;
+    }
+
+    header {
+      background: #0b84f3;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #0b84f3;
+    }
+
+    .buttn {
+      display: inline-block;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 10px;
+      text-align: center;
+      text-decoration: none;
+      color: #000;
+      width: 120px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.2s ease;
+    }
+
+    .buttn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .buttn img {
+      display: block;
+      margin: 10px auto;
+      width: 60px;
+      height: 60px;
+    }
+
+    .buttn p {
+      margin: 5px 0 0;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f1f1f1;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #f4f9ff, #e9f0f7);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #0b84f3, #0a66c2);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background-color: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0b84f3;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      height: 3px;
+      background: #0b84f3;
+      width: 0;
+      transition: 0.3s;
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .container h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #0b84f3;
+    }
+
+    .container p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #0b84f3;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #075ec9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      background-color: #f0f0f0;
+      font-size: 14px;
+      color: #666;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 8px;
+      }
+    }.tools-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.tools-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: #0b84f3;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.tool-box {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: #0b84f3;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.tool-box i {
+  font-size: 28px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tool-box:hover {
+  background-color: #0b84f3;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.tool-box:hover i {
+  color: white;
+}
+  nav {
+    background-color: #0b84f3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+  }
+
+  nav .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    nav .menu {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+
+    nav .menu.show {
+      display: flex;
+      background-color: #0b84f3;
+      padding: 10px 0;
+    }
+
+    nav .hamburger {
+      display: block;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FRP Unlocked</h1>
+    <p> Bypassing FRP on Android devices </p>
+  </header>
+<nav>
+  <div class="logo">FRP Unlocked</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="menu" id="navMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="recovery_tools_page.html"><i class="fas fa-book"></i> Recovery Tools</a>
+    <a href="frp_tools_launcher.html"><i class="fas fa-download"></i> APK Tools</a>
+    <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="disclaimer.html"><i class="fas fa-shield-alt"></i> Disclaimer</a>
+  </div>
+</nav>
+
+
+
+
+
+  </header>
+
+  <div class="container">
+    <h2>📱 Android Settings Launcher</h2>
+    <p>Click a button below to launch specific settings or apps:</p>
+
+    <div class="grid">
+
+      <a href="intent:#Intent;action=android.settings.SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/settings--v1.png" alt="Settings">
+        <p>Settings</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.WIFI_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/wifi.png" alt="Wi-Fi">
+        <p>Wi-Fi</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.BLUETOOTH_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/bluetooth.png" alt="Bluetooth">
+        <p>Bluetooth</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.intent.action.VIEW_DOWNLOADS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/downloads.png" alt="Downloads">
+        <p>Downloads</p>
+      </a>
+
+      <a href="intent:#Intent;package=com.coloros.backuprestore;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/share.png" alt="EasyShare">
+        <p>EasyShare</p>
+      </a>
+
+      <a href="intent:#Intent;package=com.google.android.gms;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/google-logo.png" alt="Google Login">
+        <p>Google Login</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.DEVICE_INFO_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/info.png" alt="Device Info">
+        <p>Device Info</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.DATE_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/planner.png" alt="Date & Time">
+        <p>Date & Time</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.LOCATION_SOURCE_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/marker.png" alt="Location">
+        <p>Location</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/visible.png" alt="Accessibility">
+        <p>Accessibility</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.APPLICATION_SETTINGS;end" class="buttn">
+<img src="https://riserom.com/wp-content/uploads/2023/12/Frame-53.png.webp" alt="App Settings">
+        <p>App Settings</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.DISPLAY_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/display.png" alt="Display">
+        <p>Display</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.SECURITY_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/lock--v1.png" alt="Security">
+        <p>Security</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.INPUT_METHOD_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/keyboard.png" alt="Language & Input">
+        <p>Language & Input</p>
+      </a>
+
+      <a href="intent:#Intent;action=android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end" class="buttn">
+        <img src="https://img.icons8.com/color/96/source-code.png" alt="Developer Options">
+        <p>Developer</p>
+      </a>
+
+    </div>
+  </div>
+
+
+  
+<!-- Add this script at the end of your body -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('show');
+  }
+</script>
+
+  <footer>
+    &copy; 2025 FRP Unlocked | Educational Use Only
+    <br>
+    <br>
+    Made by Mr.Talha
+  </footer>
+
+</body>
+</html>

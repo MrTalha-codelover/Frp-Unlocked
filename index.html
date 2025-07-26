@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FRP Unlocked - Factory Reset Protection Help</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #f4f9ff, #e9f0f7);
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #0b84f3, #0a66c2);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      background-color: white;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0b84f3;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      height: 3px;
+      background: #0b84f3;
+      width: 0;
+      transition: 0.3s;
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .container h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #0b84f3;
+    }
+
+    .container p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #0b84f3;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #075ec9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      background-color: #f0f0f0;
+      font-size: 14px;
+      color: #666;
+      border-top: 1px solid #ddd;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 10px 8px;
+      }
+    }.tools-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.tools-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: #0b84f3;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.tool-box {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: #0b84f3;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
+}
+
+.tool-box i {
+  font-size: 28px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.tool-box:hover {
+  background-color: #0b84f3;
+  color: white;
+  transform: translateY(-5px);
+}
+
+.tool-box:hover i {
+  color: white;
+}
+
+
+
+
+
+  nav {
+    background-color: #0b84f3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+  }
+
+  nav .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    nav .menu {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+
+    nav .menu.show {
+      display: flex;
+      background-color: #0b84f3;
+      padding: 10px 0;
+    }
+
+    nav .hamburger {
+      display: block;
+    }
+  }
+ 
+     .box { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #ccc; max-width: 500px; margin: auto; }
+    input, select, button { padding: 10px; margin: 10px 0; width: 100%; font-size: 16px; }
+    .result { margin-top: 20px; font-size: 18px; font-weight: bold; }
+    .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px #bbb; max-width: 500px; margin: auto; }
+    button { padding: 12px; font-size: 16px; margin-top: 20px; }
+    .result { margin-top: 20px; font-weight: bold; font-size: 18px; }
+    
+  </style>
+</head>
+<body>
+
+  <header>
+  <h1>FRP Unlocked</h1>
+    <p>Your trusted guide for bypassing FRP on Android devices (legally & safely)</p>
+  </header>
+  
+<!-- Add this in your <body> -->
+<nav>
+  <div class="logo">FRP Unlocked</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="menu" id="navMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="recovery_tools_page.html"><i class="fas fa-book"></i> Recovery Tools</a>
+    <a href="frp_tools_launcher.html"><i class="fas fa-download"></i> APK Tools</a>
+    <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="disclaimer.html"><i class="fas fa-shield-alt"></i> Disclaimer</a>
+  </div>
+</nav>
+
+
+
+
+  <div class="container">
+    <h2>Welcome to FRP Unlocked</h2>
+    <p>Forgot your Google account after factory reset? Don’t worry — we’re here to help! This website provides free, easy-to-follow FRP bypass guides and tools for Samsung, Xiaomi, Oppo, Vivo, and many more Android devices.</p>
+    
+    <a href="frp_tools_launcher.html" class="button">Get Started</a>
+  </div>
+
+<br>
+  
+<div class="box">
+  <h2>🛡️ Tool Legality Checker</h2>
+  <p>Check if an FRP bypass tool is legally safe to use.</p>
+
+  <input type="text" id="toolName" placeholder="Enter Tool Name (e.g., Easy FRP APK)">
+  <select id="toolType">
+    <option value="">-- Select Tool Type --</option>
+    <option value="official">Official App (EasyShare, Samsung Smart Switch)</option>
+    <option value="apk">APK Bypass Tool</option>
+    <option value="pc">PC Software Tool</option>
+    <option value="root">Root Unlock Tool</option>
+    <option value="unknown">Unknown Source</option>
+  </select>
+  <button onclick="checkLegality()">Check Legality</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="card">
+  <h2>🔒 FRP Lock Status Checker</h2>
+  <p>Use this guide to check if your Android device is FRP locked:</p>
+
+  <button onclick="showSteps()">Show Checking Steps</button>
+
+  <div class="result" id="steps"></div>
+</div>
+
+
+
+<script>
+
+  function checkLegality() {
+    const type = document.getElementById("toolType").value;
+    const result = document.getElementById("result");
+
+    switch(type) {
+      case "official":
+        result.textContent = "✅ Legal: This is an official app used for sharing or restoring data.";
+        break;
+      case "apk":
+        result.textContent = "⚠️ Caution: APK bypass tools may violate Google policies. Use at your own risk.";
+        break;
+      case "pc":
+        result.textContent = "⚠️ PC tools are allowed if used for recovery or flashing with permission.";
+        break;
+      case "root":
+        result.textContent = "🚫 Risky: Rooting-based tools are often illegal or void warranty.";
+        break;
+      case "unknown":
+        result.textContent = "❌ Not Recommended: Tool from unknown sources may be illegal or unsafe.";
+        break;
+      default:
+        result.textContent = "Please select a valid tool type.";
+    }
+  }
+</script>
+
+
+<!-- Add this script at the end of your body -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('show');
+  }
+</script>
+
+<script>
+  function showSteps() {
+    document.getElementById("steps").innerHTML = `
+      <ul style="text-align:left; margin-top: 20px;">
+        <li>1️⃣ Turn on your phone.</li>
+        <li>2️⃣ Connect to Wi-Fi.</li>
+        <li>3️⃣ Tap 'Next' on setup screen until it asks for Google account.</li>
+        <li>✅ <strong>If it asks for the previous Google account, FRP is enabled.</strong></li>
+        <li>❎ <strong>If setup continues without account, FRP is disabled.</strong></li>
+      </ul>
+    `;
+  }
+</script>
+
+
+  <footer>
+    &copy; 2025 FRP Unlocked | For personal, legal use only.<br>
+    <br>
+    Made by Mr.Talha
+  
+  </footer>
+
+</body>
+</html>

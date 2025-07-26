@@ -1,0 +1,171 @@
+<!-- disclaimer.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disclaimer - FRP Unlocked</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    header {
+      background-color: #0b84f3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #eaf3fc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0b84f3;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background-color: #f0f0f0;
+      font-size: 14px;
+    }
+  nav {
+    background-color: #0b84f3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+  }
+
+  nav .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    nav .menu {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+
+    nav .menu.show {
+      display: flex;
+      background-color: #0b84f3;
+      padding: 10px 0;
+    }
+
+    nav .hamburger {
+      display: block;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FRP Unlocked</h1>
+    <p>Disclaimer</p>
+  </header><nav>
+  <div class="logo">FRP Unlocked</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="menu" id="navMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="recovery_tools_page.html"><i class="fas fa-book"></i>Recovery Tools</a>
+    <a href="frp_tools_launcher.html"><i class="fas fa-download"></i> APK Tools</a>
+    <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="disclaimer.html"><i class="fas fa-shield-alt"></i> Disclaimer</a>
+  </div>
+</nav>
+
+
+  <div class="container">
+    <h2>Legal Disclaimer</h2>
+
+    <p><strong>FRP Unlocked</strong> is created for **educational and personal-use purposes only**. We do not encourage or promote any illegal activities related to mobile device unlocking or factory reset protection bypass.</p>
+
+    <p>All guides, tools, and resources provided on this website are intended to help users who **own their device** and are legally authorized to access it. If you do not own the device, or do not have permission to unlock it — you are not allowed to use this site or its resources.</p>
+
+    <p>We do not take any responsibility for how users apply the information shared on this site. Users are solely responsible for their actions and must ensure they comply with local laws and regulations.</p>
+
+    <p>All APKs/tools linked here are for testing and educational use. We do not host pirated or cracked content. Always scan files before installing.</p>
+
+    <p>If you believe any content violates your rights or policies, please contact us via the <a href="contact.html">Contact</a> page and we will address the issue promptly.</p>
+
+    <p><strong>Use at your own risk.</strong></p>
+  </div>
+
+<!-- Add this script at the end of your body -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('show');
+  }
+</script>
+
+  <footer>
+    &copy; 2025 FRP Unlocked | Legal & Educational Use Only
+  <br>
+    <br>
+    Made by Mr.Talha
+  </footer>
+
+</body>
+</html>

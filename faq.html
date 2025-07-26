@@ -1,0 +1,205 @@
+<!-- faq.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ - FRP Unlocked</title><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    header {
+      background-color: #0b84f3;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #eaf3fc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0b84f3;
+      font-weight: bold;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .faq-item {
+      margin-bottom: 25px;
+    }
+
+    .faq-item h3 {
+      color: #0b84f3;
+      margin-bottom: 10px;
+    }
+
+    .faq-item p {
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background-color: #f0f0f0;
+      font-size: 14px;
+    }
+  nav {
+    background-color: #0b84f3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+  }
+
+  nav .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav .menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  nav .menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  nav .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    nav .menu {
+      flex-direction: column;
+      width: 100%;
+      display: none;
+    }
+
+    nav .menu.show {
+      display: flex;
+      background-color: #0b84f3;
+      padding: 10px 0;
+    }
+
+    nav .hamburger {
+      display: block;
+    }
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>FRP Unlocked</h1>
+    <p>Frequently Asked Questions</p>
+  </header>
+<nav>
+  <div class="logo">FRP Unlocked</div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="menu" id="navMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="recovery_tools_page.html"><i class="fas fa-book"></i> Recovery Tools</a>
+    <a href="frp_tools_launcher.html"><i class="fas fa-download"></i> APK Tools</a>
+    <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="disclaimer.html"><i class="fas fa-shield-alt"></i> Disclaimer</a>
+  </div>
+</nav>
+
+
+  <div class="container">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h3>1. What is FRP (Factory Reset Protection)?</h3>
+      <p>FRP is a security feature on Android devices that prevents unauthorized access after a factory reset by requiring the previously synced Google account login.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>2. Is bypassing FRP legal?</h3>
+      <p>Bypassing FRP is legal if you're doing it on a device that you personally own, or have proper permission to unlock. It is illegal to bypass FRP on stolen or unauthorized devices.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>3. What does this website offer?</h3>
+      <p>We provide legal, step-by-step instructions and helpful tools to assist users in unlocking their own devices when they forget their Google account after a reset.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>4. Do I need a PC to unlock my device?</h3>
+      <p>It depends on the brand and Android version. Some methods require only an APK, while others (especially Samsung) may need a computer and USB cable.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>5. What are APK tools?</h3>
+      <p>APK tools are Android apps used to help access certain phone settings or bypass login screens. We only provide safe, tested tools for personal use.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>6. Can I use this on someone else's phone?</h3>
+      <p>No. That is not allowed. This website is strictly for educational and personal-use only. Using these methods on stolen or unauthorized devices is illegal.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>7. Is your content safe?</h3>
+      <p>Yes. All our guides and files are manually reviewed for safety. Always scan APKs before installing and only download from trusted sources.</p>
+    </div>
+
+  </div>
+
+  
+<!-- Add this script at the end of your body -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('navMenu');
+    menu.classList.toggle('show');
+  }
+</script>
+
+  <footer>
+    &copy; 2025 FRP Unlocked | Educational use only. We do not support any illegal activity.
+    <br>
+    <br>
+    Made by Mr.Talha
+  
+  </footer>
+
+</body>
+</html>
