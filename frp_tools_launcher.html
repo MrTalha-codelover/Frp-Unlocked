@@ -5,41 +5,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-```
 <title>Android Tools Launcher</title>
 
 <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
-        background: #f4f4f4;
-        color: #222;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom right, #f4f9ff, #e9f0f7);
+      color: #333;
     }
 
-    /* HEADER */
-
     header {
-        background: #ffffff;
-        border-bottom: 1px solid #ddd;
-        padding: 20px 15px;
-        text-align: center;
+      background: linear-gradient(to right, #0b84f3, #0a66c2);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-        font-size: 25px;
-        margin-bottom: 6px;
+      font-size: 2.5em;
+      margin-bottom: 10px;
     }
 
-    header p {
-        color: #777;
-        font-size: 13px;
+    nav {
+      background-color:#0b84f3;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      display: block;
+      height: 3px;
+      background: #0b84f3;
+      width: 0;
+      transition: 0.3s;
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .container h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #0b84f3;
+    }
+
+    .container p {
+      font-size: 1.1em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      color: #444;
+    }
+
 
     /* MAIN */
 
@@ -198,27 +244,40 @@
     }
 
 </style>
-```
 
 </head>
 
 <body>
 
-<header>
+  <header>
+  <h1>FRP Unlocked</h1>
+    <p>Your trusted guide for bypassing FRP on Android devices (legally & safely)</p>
+  </header>
+  
 
-```
-<h1>Android Tools Launcher</h1>
 
-<p>
-    Quick access to supported Android apps and settings
-</p>
-```
+<!-- Add this in your <body> -->
+<nav>
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="menu" id="navMenu">
+    <a href="index.html"><i class="fas fa-home"></i> Home</a>
+    <a href="recovery_tools_page.html"><i class="fas fa-book"></i> Recovery Tools</a>
+    <a href="frp_tools_launcher.html"><i class="fas fa-download"></i> APK Tools</a>
+    <a href="faq.html"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="disclaimer.html"><i class="fas fa-shield-alt"></i> Disclaimer</a>
+  </div>
+</nav>
 
-</header>
+
+
 
 <main class="container">
 
-```
+<main class="container">
+
 <div class="section-title">
     Android Tools
 </div>
@@ -699,14 +758,12 @@
 
 </main>
 
-<footer>
-
-```
-Android Tools Launcher
-```
-
-</footer>
-
+  <footer>
+    &copy; 2025 FRP Unlocked | For personal, legal use only.<br>
+    <br>
+    Made by Mr.Talha
+  
+  </footer>
 </body>
 
 </html>
