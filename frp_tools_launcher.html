@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
-<title>Android Launcher</title>
+<title>Android Tools Launcher</title>
 
 <style>
     * {
+        margin: 0;
+        padding: 0;
         box-sizing: border-box;
     }
 
     body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f4f4;
         color: #222;
     }
 
+    /* HEADER */
+
     header {
-        background: white;
-        padding: 20px;
-        text-align: center;
+        background: #ffffff;
         border-bottom: 1px solid #ddd;
+        padding: 20px 15px;
+        text-align: center;
     }
 
     header h1 {
-        margin: 0 0 6px;
-        font-size: 24px;
+        font-size: 25px;
+        margin-bottom: 6px;
     }
 
     header p {
-        margin: 0;
         color: #777;
         font-size: 13px;
     }
 
+    /* MAIN */
+
     .container {
+        width: 100%;
         max-width: 900px;
         margin: auto;
-        padding: 20px 12px;
+        padding: 20px 12px 40px;
     }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 5px 0 15px;
+    }
+
+    /* GRID */
 
     .grid {
         display: grid;
@@ -50,46 +64,139 @@
         gap: 12px;
     }
 
+    /* CARD */
+
     .card {
-        min-height: 120px;
-        background: white;
+        min-height: 125px;
+
+        background: #ffffff;
+
         border: 1px solid #ddd;
-        border-radius: 10px;
+        border-radius: 12px;
 
         display: flex;
         flex-direction: column;
-        align-items: center;
+
         justify-content: center;
+        align-items: center;
+
+        text-align: center;
 
         text-decoration: none;
         color: #222;
 
-        transition: .15s;
+        padding: 15px;
+
+        transition: .15s ease;
+
+        -webkit-tap-highlight-color: transparent;
     }
 
     .card:hover {
-        box-shadow: 0 4px 12px rgba(0,0,0,.12);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 16px rgba(0, 0, 0, .10);
     }
 
     .card:active {
         transform: scale(.96);
+        background: #f0f0f0;
     }
 
+    /* ICON */
+
     .icon {
-        font-size: 35px;
+        width: 54px;
+        height: 54px;
+
+        border-radius: 50%;
+
+        background: #f1f3f4;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 29px;
+
         margin-bottom: 10px;
     }
 
-    .name {
-        font-weight: bold;
+    .title {
         font-size: 14px;
+        font-weight: bold;
     }
 
+    .description {
+        font-size: 11px;
+        color: #888;
+        margin-top: 5px;
+    }
+
+    /* NOTICE */
+
+    .notice {
+        margin-top: 25px;
+
+        background: #fff;
+
+        border: 1px solid #ddd;
+
+        border-radius: 10px;
+
+        padding: 15px;
+
+        color: #666;
+
+        font-size: 12px;
+
+        line-height: 1.6;
+    }
+
+    /* FOOTER */
+
+    footer {
+        text-align: center;
+
+        padding: 25px 10px;
+
+        color: #999;
+
+        font-size: 12px;
+    }
+
+    /* MOBILE */
+
     @media (max-width: 600px) {
+
+        header h1 {
+            font-size: 21px;
+        }
+
         .grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 9px;
+        }
+
+        .card {
+            min-height: 115px;
+            padding: 12px;
+        }
+
+        .icon {
+            width: 46px;
+            height: 46px;
+            font-size: 24px;
+        }
+
+        .title {
+            font-size: 13px;
+        }
+
+        .description {
+            font-size: 10px;
         }
     }
+
 </style>
 ```
 
@@ -98,61 +205,508 @@
 <body>
 
 <header>
-    <h1>Android Launcher</h1>
-    <p>Package intent test</p>
+
+```
+<h1>Android Tools Launcher</h1>
+
+<p>
+    Quick access to supported Android apps and settings
+</p>
+```
+
 </header>
 
-<div class="container">
+<main class="container">
 
 ```
+<div class="section-title">
+    Android Tools
+</div>
+
+
 <div class="grid">
 
-    <!-- Android Settings -->
+
+    <!-- SETTINGS -->
+
     <a class="card"
        href="intent://com.android.settings/#Intent;scheme=android-app;end">
+
         <div class="icon">⚙️</div>
-        <div class="name">Settings</div>
+
+        <div class="title">
+            Settings
+        </div>
+
+        <div class="description">
+            Android Settings
+        </div>
+
     </a>
 
-    <!-- YouTube -->
+
+    <!-- GOOGLE SEARCH -->
+
+    <a class="card"
+       href="intent://com.google.android.googlequicksearchbox/#Intent;scheme=android-app;end">
+
+        <div class="icon">🔎</div>
+
+        <div class="title">
+            Google Search
+        </div>
+
+        <div class="description">
+            Google Search
+        </div>
+
+    </a>
+
+
+    <!-- YOUTUBE -->
+
     <a class="card"
        href="intent://com.google.android.youtube/#Intent;scheme=android-app;end">
+
         <div class="icon">▶️</div>
-        <div class="name">YouTube</div>
+
+        <div class="title">
+            YouTube
+        </div>
+
+        <div class="description">
+            YouTube
+        </div>
+
     </a>
 
-    <!-- Chrome -->
+
+    <!-- CHROME -->
+
     <a class="card"
        href="intent://com.android.chrome/#Intent;scheme=android-app;end">
+
         <div class="icon">🌐</div>
-        <div class="name">Chrome</div>
+
+        <div class="title">
+            Chrome
+        </div>
+
+        <div class="description">
+            Google Chrome
+        </div>
+
     </a>
 
-    <!-- Calculator -->
+
+    <!-- CALCULATOR -->
+
     <a class="card"
        href="intent://com.google.android.calculator/#Intent;scheme=android-app;end">
+
         <div class="icon">🧮</div>
-        <div class="name">Calculator</div>
+
+        <div class="title">
+            Calculator
+        </div>
+
+        <div class="description">
+            Calculator
+        </div>
+
     </a>
 
-    <!-- Files -->
+
+    <!-- FILES -->
+
     <a class="card"
        href="intent://com.google.android.documentsui/#Intent;scheme=android-app;end">
+
         <div class="icon">📁</div>
-        <div class="name">Files</div>
+
+        <div class="title">
+            Files
+        </div>
+
+        <div class="description">
+            File Manager
+        </div>
+
     </a>
 
-    <!-- Phone -->
+
+    <!-- PHONE -->
+
     <a class="card"
        href="intent://com.google.android.dialer/#Intent;scheme=android-app;end">
+
         <div class="icon">📞</div>
-        <div class="name">Phone</div>
+
+        <div class="title">
+            Phone
+        </div>
+
+        <div class="description">
+            Phone Dialer
+        </div>
+
     </a>
+
+
+    <!-- CONTACTS -->
+
+    <a class="card"
+       href="intent://com.google.android.contacts/#Intent;scheme=android-app;end">
+
+        <div class="icon">👤</div>
+
+        <div class="title">
+            Contacts
+        </div>
+
+        <div class="description">
+            Contacts
+        </div>
+
+    </a>
+
+
+    <!-- MESSAGES -->
+
+    <a class="card"
+       href="intent://com.google.android.apps.messaging/#Intent;scheme=android-app;end">
+
+        <div class="icon">💬</div>
+
+        <div class="title">
+            Messages
+        </div>
+
+        <div class="description">
+            Messages
+        </div>
+
+    </a>
+
+
+    <!-- CAMERA -->
+
+    <a class="card"
+       href="intent://com.google.android.GoogleCamera/#Intent;scheme=android-app;end">
+
+        <div class="icon">📷</div>
+
+        <div class="title">
+            Camera
+        </div>
+
+        <div class="description">
+            Camera
+        </div>
+
+    </a>
+
+
+    <!-- WIFI -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.WIFI_SETTINGS;end">
+
+        <div class="icon">📶</div>
+
+        <div class="title">
+            Wi-Fi
+        </div>
+
+        <div class="description">
+            Wi-Fi Settings
+        </div>
+
+    </a>
+
+
+    <!-- BLUETOOTH -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.BLUETOOTH_SETTINGS;end">
+
+        <div class="icon">🔵</div>
+
+        <div class="title">
+            Bluetooth
+        </div>
+
+        <div class="description">
+            Bluetooth Settings
+        </div>
+
+    </a>
+
+
+    <!-- LOCATION -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.LOCATION_SOURCE_SETTINGS;end">
+
+        <div class="icon">📍</div>
+
+        <div class="title">
+            Location
+        </div>
+
+        <div class="description">
+            Location Settings
+        </div>
+
+    </a>
+
+
+    <!-- DISPLAY -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.DISPLAY_SETTINGS;end">
+
+        <div class="icon">☀️</div>
+
+        <div class="title">
+            Display
+        </div>
+
+        <div class="description">
+            Display Settings
+        </div>
+
+    </a>
+
+
+    <!-- SOUND -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.SOUND_SETTINGS;end">
+
+        <div class="icon">🔊</div>
+
+        <div class="title">
+            Sound
+        </div>
+
+        <div class="description">
+            Sound Settings
+        </div>
+
+    </a>
+
+
+    <!-- APPS -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.APPLICATION_SETTINGS;end">
+
+        <div class="icon">📱</div>
+
+        <div class="title">
+            Apps
+        </div>
+
+        <div class="description">
+            Installed Apps
+        </div>
+
+    </a>
+
+
+    <!-- SECURITY -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.SECURITY_SETTINGS;end">
+
+        <div class="icon">🔐</div>
+
+        <div class="title">
+            Security
+        </div>
+
+        <div class="description">
+            Security Settings
+        </div>
+
+    </a>
+
+
+    <!-- NOTIFICATIONS -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.NOTIFICATION_SETTINGS;end">
+
+        <div class="icon">🔔</div>
+
+        <div class="title">
+            Notifications
+        </div>
+
+        <div class="description">
+            Notification Settings
+        </div>
+
+    </a>
+
+
+    <!-- DATE TIME -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.DATE_SETTINGS;end">
+
+        <div class="icon">🕐</div>
+
+        <div class="title">
+            Date & Time
+        </div>
+
+        <div class="description">
+            Date & Time Settings
+        </div>
+
+    </a>
+
+
+    <!-- LANGUAGE -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.LOCALE_SETTINGS;end">
+
+        <div class="icon">🌐</div>
+
+        <div class="title">
+            Language
+        </div>
+
+        <div class="description">
+            Language Settings
+        </div>
+
+    </a>
+
+
+    <!-- STORAGE -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.INTERNAL_STORAGE_SETTINGS;end">
+
+        <div class="icon">💾</div>
+
+        <div class="title">
+            Storage
+        </div>
+
+        <div class="description">
+            Storage Settings
+        </div>
+
+    </a>
+
+
+    <!-- AIRPLANE -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.AIRPLANE_MODE_SETTINGS;end">
+
+        <div class="icon">✈️</div>
+
+        <div class="title">
+            Airplane Mode
+        </div>
+
+        <div class="description">
+            Airplane Settings
+        </div>
+
+    </a>
+
+
+    <!-- VPN -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.VPN_SETTINGS;end">
+
+        <div class="icon">🛡️</div>
+
+        <div class="title">
+            VPN
+        </div>
+
+        <div class="description">
+            VPN Settings
+        </div>
+
+    </a>
+
+
+    <!-- ACCESSIBILITY -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end">
+
+        <div class="icon">♿</div>
+
+        <div class="title">
+            Accessibility
+        </div>
+
+        <div class="description">
+            Accessibility Settings
+        </div>
+
+    </a>
+
+
+    <!-- NETWORK -->
+
+    <a class="card"
+       href="intent:#Intent;action=android.settings.WIRELESS_SETTINGS;end">
+
+        <div class="icon">📡</div>
+
+        <div class="title">
+            Network
+        </div>
+
+        <div class="description">
+            Wireless Settings
+        </div>
+
+    </a>
+
+
+</div>
+
+
+<div class="notice">
+
+    <strong>Note:</strong>
+
+    <br><br>
+
+    App links use Android package intents. Settings links use
+    Android Settings actions.
+
+    <br><br>
+
+    Availability depends on the applications installed on the
+    Android device and the browser's handling of Android intents.
 
 </div>
 ```
 
-</div>
+</main>
+
+<footer>
+
+```
+Android Tools Launcher
+```
+
+</footer>
 
 </body>
+
 </html>
