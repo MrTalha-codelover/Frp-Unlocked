@@ -1,247 +1,158 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Android Settings Launcher</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+```
+<title>Android Launcher</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #eef5ff, #f7f9fc);
-    color: #222;
-}
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        color: #222;
+    }
 
-header {
-    background: linear-gradient(135deg, #087ff5, #075ec9);
-    color: white;
-    text-align: center;
-    padding: 35px 15px;
-}
+    header {
+        background: white;
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
 
-header h1 {
-    font-size: 30px;
-    margin-bottom: 8px;
-}
-
-header p {
-    font-size: 15px;
-    opacity: .9;
-}
-
-nav {
-    background: white;
-    padding: 14px 20px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    box-shadow: 0 2px 8px rgba(0,0,0,.08);
-}
-
-nav a {
-    text-decoration: none;
-    color: #087ff5;
-    font-weight: 600;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 35px auto;
-    padding: 20px;
-}
-
-.container h2 {
-    text-align: center;
-    color: #087ff5;
-    margin-bottom: 10px;
-}
-
-.container > p {
-    text-align: center;
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 18px;
-}
-
-.card {
-    background: white;
-    border-radius: 15px;
-    padding: 20px 10px;
-    text-align: center;
-    text-decoration: none;
-    color: #087ff5;
-    box-shadow: 0 5px 15px rgba(0,0,0,.08);
-    transition: .2s;
-    cursor: pointer;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: #087ff5;
-    color: white;
-}
-
-.card img {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-    margin-bottom: 12px;
-}
-
-.card p {
-    font-weight: 700;
-    font-size: 14px;
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
-    background: #eee;
-    color: #666;
-}
-
-@media(max-width:600px) {
     header h1 {
+        margin: 0 0 6px;
         font-size: 24px;
     }
 
-    nav {
-        flex-wrap: wrap;
-        gap: 12px;
+    header p {
+        margin: 0;
+        color: #777;
+        font-size: 13px;
+    }
+
+    .container {
+        max-width: 900px;
+        margin: auto;
+        padding: 20px 12px;
     }
 
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
     }
-}
+
+    .card {
+        min-height: 120px;
+        background: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        text-decoration: none;
+        color: #222;
+
+        transition: .15s;
+    }
+
+    .card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,.12);
+    }
+
+    .card:active {
+        transform: scale(.96);
+    }
+
+    .icon {
+        font-size: 35px;
+        margin-bottom: 10px;
+    }
+
+    .name {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 </style>
+```
+
 </head>
 
 <body>
 
 <header>
-    <h1>Android Settings Launcher</h1>
-    <p>Quick access to Android system settings</p>
+    <h1>Android Launcher</h1>
+    <p>Package intent test</p>
 </header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
-</nav>
 
 <div class="container">
 
-    <h2>📱 Android Settings</h2>
-    <p>Tap a card to open the corresponding Android setting.</p>
+```
+<div class="grid">
 
-    <div class="grid">
+    <!-- Android Settings -->
+    <a class="card"
+       href="intent://com.android.settings/#Intent;scheme=android-app;end">
+        <div class="icon">⚙️</div>
+        <div class="name">Settings</div>
+    </a>
 
-        <!-- SETTINGS -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/settings--v1.png">
-            <p>Settings</p>
-        </a>
+    <!-- YouTube -->
+    <a class="card"
+       href="intent://com.google.android.youtube/#Intent;scheme=android-app;end">
+        <div class="icon">▶️</div>
+        <div class="name">YouTube</div>
+    </a>
 
-        <!-- WIFI -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.WIFI_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/wifi.png">
-            <p>Wi-Fi</p>
-        </a>
+    <!-- Chrome -->
+    <a class="card"
+       href="intent://com.android.chrome/#Intent;scheme=android-app;end">
+        <div class="icon">🌐</div>
+        <div class="name">Chrome</div>
+    </a>
 
-        <!-- BLUETOOTH -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.BLUETOOTH_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/bluetooth.png">
-            <p>Bluetooth</p>
-        </a>
+    <!-- Calculator -->
+    <a class="card"
+       href="intent://com.google.android.calculator/#Intent;scheme=android-app;end">
+        <div class="icon">🧮</div>
+        <div class="name">Calculator</div>
+    </a>
 
-        <!-- DATE & TIME -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.DATE_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/planner.png">
-            <p>Date & Time</p>
-        </a>
+    <!-- Files -->
+    <a class="card"
+       href="intent://com.google.android.documentsui/#Intent;scheme=android-app;end">
+        <div class="icon">📁</div>
+        <div class="name">Files</div>
+    </a>
 
-        <!-- LOCATION -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.LOCATION_SOURCE_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/marker.png">
-            <p>Location</p>
-        </a>
+    <!-- Phone -->
+    <a class="card"
+       href="intent://com.google.android.dialer/#Intent;scheme=android-app;end">
+        <div class="icon">📞</div>
+        <div class="name">Phone</div>
+    </a>
 
-        <!-- ACCESSIBILITY -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/visible.png">
-            <p>Accessibility</p>
-        </a>
+</div>
+```
 
-        <!-- APPLICATION SETTINGS -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.APPLICATION_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/application-window.png">
-            <p>App Settings</p>
-        </a>
-
-        <!-- DISPLAY -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.DISPLAY_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/display.png">
-            <p>Display</p>
-        </a>
-
-        <!-- SECURITY -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.SECURITY_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/lock--v1.png">
-            <p>Security</p>
-        </a>
-
-        <!-- LANGUAGE / INPUT -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.INPUT_METHOD_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/keyboard.png">
-            <p>Language & Input</p>
-        </a>
-
-        <!-- DEVELOPER OPTIONS -->
-        <a class="card"
-           href="intent:#Intent;action=android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end">
-            <img src="https://img.icons8.com/color/96/source-code.png">
-            <p>Developer Options</p>
-        </a>
-
-        <!-- DOWNLOADS -->
-        <a class="card"
-           href="intent:#Intent;action=android.intent.action.VIEW_DOWNLOADS;end">
-            <img src="https://img.icons8.com/color/96/downloads.png">
-            <p>Downloads</p>
-        </a>
-
-    </div>
 </div>
 
-<footer>
-    © 2026 Android Settings Launcher
-</footer>
 </body>
-
 </html>
